@@ -1,0 +1,19 @@
+{
+  "name": "nlp-bot",
+  "version": "1.0.0",
+  "description": "This is a Node.js library for building chatbots using the Wit.ai natural language processing platform. It provides an easy-to-use interface for interacting with the Wit.ai API, allowing you to send messages to the chatbot and receive responses, as well as starting and maintaining conversations with the chatbot. With this library, you can quickly and easily build chatbots that can understand and respond to user input in a variety of languages and contexts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nakul Jhunjhunwala",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-wit": "^6.5.1",
+    "sv443-joke-api": "^0.1.0"
+  }
+}
