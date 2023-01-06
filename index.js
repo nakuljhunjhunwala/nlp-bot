@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 const { chat } = require("./src/client");
+const { log } = require('./src/utils/util');
 
 /**
  * Send a chat message and log the response
@@ -12,11 +13,11 @@ async function sendChatMessage(message) {
     const response = await chat(message);
     console.log(response.text);
   } catch (error) {
-    console.log(error);
+    log.error(error)
   }
 }
 
-// sendChatMessage("Can you get some holidays for me in pakistan?");
+sendChatMessage("Can you get some holidays for me in pakistan?");
 
 module.exports = {
   chat,

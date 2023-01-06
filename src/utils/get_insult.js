@@ -37,7 +37,7 @@ async function insult(name) {
     // Add insult to response text
     response.text = response.text + insultResponse.insult;
   } catch (error) {
-    console.log(error);
+    log.error(error);
     response.text = "I don't wanna waste any more of my insults.";
   }
 

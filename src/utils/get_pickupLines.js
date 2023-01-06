@@ -58,7 +58,7 @@ async function flirt() {
     // Add generated text to response
     response.text = pickuplines[0].generated_text;
   } catch (error) {
-    console.log(error);
+    log.error(error);
     response.text = "Not in the mood right now. Come back later :)";
   }
 

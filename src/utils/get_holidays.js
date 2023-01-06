@@ -1,7 +1,7 @@
 const axios = require("axios");
 const moment = require("moment");
 const _ = require("lodash");
-const BASE_URL = "https://api.api-ninjas.com/v1/";
+const BASE_URL = "https://api.api-ninjas.com/v1";
 const token = process.env.API_NINJA;
 
 

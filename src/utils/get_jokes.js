@@ -1,7 +1,7 @@
 const JokeAPI = require("sv443-joke-api");
 const axios = require("axios");
 const _ = require("lodash");
-const BASE_URL = "https://api.api-ninjas.com/v1/";
+const BASE_URL = "https://api.api-ninjas.com/v1";
 const token = process.env.API_NINJA;
 
 // Enable internal handling of API responses
@@ -61,7 +61,7 @@ async function get_joke(genre) {
         break;
     }
   } catch (error) {
-    console.log(error);
+    log.error(error);
     throw error;
   }
 }
@@ -87,7 +87,7 @@ async function jokeAPI(genre, joke) {
 }
 
 async function apiNinjaDadJoke(joke) {
-  const url = BASE_URL + "dadjokes?limit=1";
+  const url = BASE_URL + "/dadjokes?limit=1";
   const config = {
     method: "get",
     url: url,
@@ -105,7 +105,7 @@ async function apiNinjaDadJoke(joke) {
 }
 
 async function apiNinjaJoke(joke) {
-  const url = BASE_URL + "jokes?limit=1";
+  const url = BASE_URL + "/jokes?limit=1";
   const config = {
     method: "get",
     url: url,
@@ -123,7 +123,7 @@ async function apiNinjaJoke(joke) {
 }
 
 async function chuckNorrisJoke(joke) {
-  const url = BASE_URL + "chucknorris";
+  const url = BASE_URL + "/chucknorris";
   const config = {
     method: "get",
     url: url,

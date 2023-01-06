@@ -43,9 +43,7 @@ async function generateResponse(intent, entities) {
       try {
         response.text = await getWeatherInfo(entities?.location?.[0]?.body);
       } catch (error) {
-        console.log(
-          error.error || error.response.data.message || error.message
-        );
+        log.error(error);
         response.text = "Sorry, Not able to retrive weather";
       }
       break;
@@ -54,9 +52,7 @@ async function generateResponse(intent, entities) {
       try {
         response.text = await location_info(entities?.location);
       } catch (error) {
-        console.log(
-          error.error || error.response.data.message || error.message
-        );
+        log.error(error);
         response.text = `Sorry, Not able to retrive details ${entities?.location?.[0]?.body
             ? `for ${entities?.location?.[0]?.body}`
             : ""
@@ -82,7 +78,7 @@ async function generateResponse(intent, entities) {
         const res = await insult(entities?.person);
         response.text = res.text;
       } catch (error) {
-        console.log(error);
+        log.error(error);
         response.text = "Not worth of my insults"
       }
       break;
@@ -92,7 +88,7 @@ async function generateResponse(intent, entities) {
           const res = await flirt();
           response.text = res.text;
         } catch (error) {
-          console.log(error);
+          log.error(error);
           response.text = "Not worth of my pickup line"
         }
         break;
@@ -102,7 +98,7 @@ async function generateResponse(intent, entities) {
             const res = await holidays(entities?.location?.[0]?.body);
             response.text = res.text;
           } catch (error) {
-            console.log(error);
+            log.error(error);
             response.text = "I am sorry I was not able to find any holidays for you :("
           }
           break;
