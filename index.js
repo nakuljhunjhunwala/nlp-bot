@@ -17,7 +17,7 @@ async function sendChatMessage(message) {
   }
 }
 
-sendChatMessage("Can you get some holidays for me in pakistan?");
+// sendChatMessage("Can you get some holidays for me in pakistan?");
 
 module.exports = {
   chat,
